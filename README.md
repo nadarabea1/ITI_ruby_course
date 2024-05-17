@@ -8,7 +8,7 @@ This repository contains a collection of labs for learning Ruby and Ruby on Rail
    - Description: Basic Ruby programming exercises.
    - Files: `index.rb, inventory.txt`
 
-2. **Lab 2: Working with Ruby on Rails**
+2. **Lab 2: OOP in Ruby**
    - Description: Introduction to Ruby on Rails framework.
    - Files: `index.rb, app.logs`
 
