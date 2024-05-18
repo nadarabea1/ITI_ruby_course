@@ -1,0 +1,31 @@
+<%= form_with model: article, local: true, novalidate: true do |form| %>
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, Visible::VALID_STATUSES, { selected: article.status || 'public' } %>
+  </div>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "#{'is-invalid' if article.errors[:title].any?}" %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body, class: "#{'is-invalid' if article.errors[:body].any?}" %>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
